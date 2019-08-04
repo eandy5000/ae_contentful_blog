@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "../models/Story"
 
 const IndexPage = ({ data }: any): JSX.Element => {
   console.log("data", data)
@@ -36,6 +37,9 @@ export const query = graphql`
             createdAt
             homeUrl
             homeCountry
+            publisherDescription {
+              publisherDescription
+            }
           }
         }
       }
