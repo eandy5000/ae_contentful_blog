@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -28,7 +27,7 @@ const Layout = ({ children }: Props): JSX.Element => {
   `)
 
   return (
-    <>
+    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -45,12 +44,8 @@ const Layout = ({ children }: Props): JSX.Element => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
