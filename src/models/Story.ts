@@ -1,67 +1,28 @@
+import Publisher from "./Publisher"
+
+interface StoryProps {
+  id: string
+  createdAt: string
+  hasVideo: boolean
+  name: string
+  tags: string[]
+  url: string
+  publisher: Publisher
+}
+
 class Story {
-  private pCreatedAt!: string
-  private pHasVideo!: boolean
-  private pId!: string
-  private pName!: string
-  private pTags!: string[]
-  private pUrl!: string
+  private pData!: StoryProps
 
-  constructor(
-    createdAt: string,
-    hasVideo: boolean,
-    id: string,
-    name: string,
-    tags: string[],
-    url: string
-  ) {
-    this.setId(id)
-    this.setCreatedAt(createdAt)
-    this.setHasVideo(hasVideo)
-    this.setName(name)
-    this.setTags(tags)
-    this.setUrl(url)
+  constructor(data: StoryProps) {
+    this.setDataProps(data)
   }
 
-  public getId(): string {
-    return this.pId
-  }
-  public setId(newId: string): void {
-    this.pId = newId
+  public setDataProps(props: StoryProps) {
+    this.pData = props
   }
 
-  public getCreatedAt(): string {
-    return this.pCreatedAt
-  }
-  public setCreatedAt(reatedAt: string): void {
-    this.pCreatedAt = reatedAt
-  }
-
-  public getHasVideo(): boolean {
-    return this.pHasVideo
-  }
-  public setHasVideo(hasVideo: boolean): void {
-    this.pHasVideo = hasVideo
-  }
-
-  public getName(): string {
-    return this.pName
-  }
-  public setName(name: string): void {
-    this.pName = name
-  }
-
-  public getTags(): string[] {
-    return this.pTags
-  }
-  public setTags(tags: string[]): void {
-    this.pTags = tags
-  }
-
-  public getUrl(): string {
-    return this.pUrl
-  }
-  public setUrl(url: string): void {
-    this.pUrl = url
+  public getData(): StoryProps {
+    return this.pData
   }
 }
 
