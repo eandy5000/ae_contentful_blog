@@ -9,7 +9,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.scss"
+import "../styles/main.scss"
 
 interface Props {
   children: React.ReactNode

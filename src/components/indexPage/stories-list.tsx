@@ -9,7 +9,6 @@ interface Props {
 const StoriesList = ({ stories }: Props) => {
   return (
     <div>
-      <div>Stories</div>
       {stories.map(story => (
         <Story key={story.id} story={story} />
       ))}
