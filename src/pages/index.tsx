@@ -7,9 +7,19 @@ import StoriesList from "../components/indexPage/stories-list"
 import { ContentfulStoryNode } from "../models/interfaces"
 
 const IndexPage = ({ data }: any): JSX.Element => {
-  const stories = data.allContentfulStory.edges.map(
-    (i: any) => i.node as ContentfulStoryNode
-  )
+  const stories = data.allContentfulStory.edges
+    .map(
+      (edge: any) =>
+        ({
+          ...edge.node,
+          createdAt: new Date(edge.node.createdAt),
+        } as ContentfulStoryNode)
+    )
+    .sort(
+      (storyA: ContentfulStoryNode, storyB: ContentfulStoryNode) =>
+        storyB.createdAt.getTime() - storyA.createdAt.getTime()
+    )
+
   return (
     <Layout>
       <SEO title="Home" />

@@ -7,13 +7,11 @@ interface Props {
 }
 
 const StoriesList = ({ stories }: Props) => {
-  return (
-    <div>
-      {stories.map(story => (
-        <Story key={story.id} story={story} />
-      ))}
-    </div>
-  )
+  const storyComponents = stories.map(story => (
+    <Story key={story.id} story={story} />
+  ))
+
+  return <div>{storyComponents}</div>
 }
 
 export default StoriesList

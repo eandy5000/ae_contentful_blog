@@ -13,7 +13,7 @@ interface PublisherNode {
 
 export interface ContentfulStoryNode {
   id: string
-  createdAt: string
+  createdAt: Date
   hasVideo: boolean
   name: string
   tags: string[]
