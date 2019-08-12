@@ -9,18 +9,11 @@ interface Props {
 }
 
 const Story = ({ story }: Props) => {
-  console.log("story", story)
   const { name, tags, hasVideo, url, createdAt, publisher } = story
   const hasVideoPill = false === hasVideo ? null : <Pill text={`has video`} />
   const dateText = `${monthText(
     getMonth(createdAt)
   )}-${createdAt.getDate()} ${createdAt.getFullYear()}`
-  console.log(
-    "month",
-    createdAt.getMonth(),
-    getMonth(createdAt),
-    new Date().getMonth()
-  )
 
   return (
     <div className={"story__border"}>
@@ -28,7 +21,7 @@ const Story = ({ story }: Props) => {
       <div className={"story__date"}>{dateText}</div>
       <div className={"story__storyLink"}>
         <a href={url} target="_blank">
-          see story details
+          {`see story details at ${publisher.name}`}
         </a>
       </div>
       <div className={"story__tags"}>

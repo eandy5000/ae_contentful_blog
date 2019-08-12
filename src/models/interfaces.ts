@@ -9,6 +9,7 @@ interface PublisherNode {
   homeUrl: string
   homeCountry: string
   publisherDescription: PublisherDescription
+  displayName: string
 }
 
 export interface ContentfulStoryNode {

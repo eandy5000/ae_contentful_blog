@@ -9,8 +9,22 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { ContentfulStoryNode } from "../models/interfaces"
 
-function SEO({ description, lang, meta, title }) {
+interface MetaTag {
+  name: string
+  content: any
+}
+
+interface Props {
+  description: string
+  lang: string
+  meta: MetaTag[]
+  title: string
+  stories: ContentfulStoryNode[]
+}
+
+function SEO({ description, lang, meta, title, stories }: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,6 +41,12 @@ function SEO({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
 
+  const topStoriesText = stories
+    .map((story, index) => `Story ${index + 1}: ${story.name}.`)
+    .join(" ")
+
+  const seoDescriptionText = `${metaDescription} ${topStoriesText}`
+
   return (
     <Helmet
       htmlAttributes={{
@@ -37,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seoDescriptionText,
         },
         {
           property: `og:title`,
@@ -45,7 +65,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seoDescriptionText,
         },
         {
           property: `og:type`,
@@ -65,7 +85,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seoDescriptionText,
         },
       ].concat(meta)}
     />

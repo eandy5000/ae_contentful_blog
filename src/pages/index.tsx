@@ -22,7 +22,7 @@ const IndexPage = ({ data }: any): JSX.Element => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" stories={stories} />
       <StoriesList stories={stories} />
       <Link to="/page-2/">Go to page 2</Link>
     </Layout>
@@ -44,6 +44,7 @@ export const query = graphql`
           publisher {
             id
             name
+            displayName
             createdAt
             homeUrl
             homeCountry

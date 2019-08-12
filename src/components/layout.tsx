@@ -35,15 +35,30 @@ const Layout = ({ children }: Props): JSX.Element => {
           maxWidth: 960,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
+          minHeight: "70vh",
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <footer
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          backgroundColor: "black",
+          color: "white",
+          minHeight: "30vh",
+        }}
+      >
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: "2rem 0",
+          }}
+        >
+          © {new Date().getFullYear()}, Lorem ipsum dolor sit,
+        </div>
+      </footer>
     </div>
   )
 }
