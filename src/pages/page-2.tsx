@@ -9,7 +9,6 @@ import { pageStartSlice, pageEndSlice } from "../utilities/helper"
 
 const SecondPage = ({ data }: any): JSX.Element => {
   const pageNumber = 2
-  console.log("2nd", pageStartSlice(pageNumber), pageEndSlice(pageNumber))
 
   const stories = data.allContentfulStory.edges
     .map(

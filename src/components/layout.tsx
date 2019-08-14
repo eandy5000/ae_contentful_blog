@@ -56,7 +56,7 @@ const Layout = ({ children }: Props): JSX.Element => {
             padding: "2rem 0",
           }}
         >
-          © {new Date().getFullYear()}, Lorem ipsum dolor sit,
+          © {new Date().getFullYear()}
         </div>
       </footer>
     </div>

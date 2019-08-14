@@ -9,7 +9,6 @@ import { pageStartSlice, pageEndSlice } from "../utilities/helper"
 
 const ThirdPage = ({ data }: any): JSX.Element => {
   const pageNumber = 3
-  console.log("3rd", pageStartSlice(pageNumber), pageEndSlice(pageNumber))
 
   const stories = data.allContentfulStory.edges
     .map(

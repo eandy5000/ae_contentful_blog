@@ -9,7 +9,6 @@ import { pageStartSlice, pageEndSlice } from "../utilities/helper"
 
 const FourthPage = ({ data }: any): JSX.Element => {
   const pageNumber = 4
-  console.log("4th", pageStartSlice(pageNumber), pageEndSlice(pageNumber))
   const stories = data.allContentfulStory.edges
     .map(
       (edge: any) =>
@@ -23,7 +22,6 @@ const FourthPage = ({ data }: any): JSX.Element => {
         storyB.createdAt.getTime() - storyA.createdAt.getTime()
     )
     .slice(pageStartSlice(pageNumber), pageEndSlice(pageNumber))
-  console.log("foo", stories)
 
   return (
     <Layout>

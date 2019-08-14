@@ -9,7 +9,6 @@ import { pageStartSlice, pageEndSlice } from "../utilities/helper"
 
 const IndexPage = ({ data }: any): JSX.Element => {
   const pageNumber = 1
-  console.log("index", pageStartSlice(pageNumber), pageEndSlice(pageNumber))
   const stories = data.allContentfulStory.edges
     .map(
       (edge: any) =>
