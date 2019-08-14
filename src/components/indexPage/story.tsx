@@ -14,6 +14,7 @@ const Story = ({ story }: Props) => {
   const dateText = `${monthText(
     getMonth(createdAt)
   )}-${createdAt.getDate()} ${createdAt.getFullYear()}`
+  console.log("story", story)
 
   return (
     <div className={"story__border"}>
@@ -21,7 +22,7 @@ const Story = ({ story }: Props) => {
       <div className={"story__date"}>{dateText}</div>
       <div className={"story__storyLink"}>
         <a href={url} target="_blank">
-          {`see story details at ${publisher.name}`}
+          {`see story details at ${publisher.displayName}`}
         </a>
       </div>
       <div className={"story__tags"}>

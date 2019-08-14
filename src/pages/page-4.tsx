@@ -7,9 +7,9 @@ import StoriesList from "../components/indexPage/stories-list"
 import { ContentfulStoryNode } from "../models/interfaces"
 import { pageStartSlice, pageEndSlice } from "../utilities/helper"
 
-const IndexPage = ({ data }: any): JSX.Element => {
-  const pageNumber = 1
-  console.log("index", pageStartSlice(pageNumber), pageEndSlice(pageNumber))
+const FourthPage = ({ data }: any): JSX.Element => {
+  const pageNumber = 4
+  console.log("4th", pageStartSlice(pageNumber), pageEndSlice(pageNumber))
   const stories = data.allContentfulStory.edges
     .map(
       (edge: any) =>
@@ -23,19 +23,23 @@ const IndexPage = ({ data }: any): JSX.Element => {
         storyB.createdAt.getTime() - storyA.createdAt.getTime()
     )
     .slice(pageStartSlice(pageNumber), pageEndSlice(pageNumber))
+  console.log("foo", stories)
 
   return (
     <Layout>
       <SEO title="Home" stories={stories} />
       <StoriesList stories={stories} />
-      <Link to="/page-2/">next page</Link>
+      <Link style={{ marginRight: "1rem" }} to="/page-3">
+        previous page
+      </Link>
+      <Link to="/page-5">next page</Link>
     </Layout>
   )
 }
 
-export default IndexPage
+export default FourthPage
 export const query = graphql`
-  query indexPageStories {
+  query fourthPageStories {
     allContentfulStory {
       edges {
         node {

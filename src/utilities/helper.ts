@@ -1,3 +1,17 @@
+const storyMax = 4
+
+export const pageStartSlice = (pageNumber: number) =>
+  pageNumber * storyMax - storyMax
+
+export const pageEndSlice = (pageNumber: number) => {
+  switch (pageNumber) {
+    case 1:
+      return storyMax
+    default:
+      return pageNumber * storyMax
+  }
+}
+
 export const monthText = (month: number): string => {
   const nonZeroMonth = month + 1
 
