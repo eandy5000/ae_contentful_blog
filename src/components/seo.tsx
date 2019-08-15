@@ -40,9 +40,15 @@ function SEO({ description, lang, meta, title, stories }: Props) {
 
   const metaDescription = description || site.siteMetadata.description
 
-  const topStoriesText = stories
-    .map((story, index) => `Story ${index + 1}: ${story.name}.`)
-    .join(" ")
+  const topStoriesText = () => {
+    if (stories) {
+      return stories
+        .map((story, index) => `Story ${index + 1}: ${story.name}.`)
+        .join(" ")
+    } else {
+      return ""
+    }
+  }
 
   const seoDescriptionText = `${metaDescription} ${topStoriesText}`
 
