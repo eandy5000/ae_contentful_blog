@@ -1,4 +1,4 @@
-const storyMax = 3
+const storyMax = 5
 
 export const pageStartSlice = (pageNumber: number) =>
   pageNumber * storyMax - storyMax

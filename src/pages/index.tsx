@@ -50,6 +50,7 @@ export const query = graphql`
             createdAt
             homeUrl
             homeCountry
+            displayName
             publisherDescription {
               publisherDescription
             }
