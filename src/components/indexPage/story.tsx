@@ -15,6 +15,8 @@ const Story = ({ story }: Props) => {
     getMonth(createdAt)
   )}-${createdAt.getDate()} ${createdAt.getFullYear()}`
 
+  console.log("pub", publisher)
+
   return (
     <div className={"story__border"}>
       <div className={"story__name"}>{name}</div>
