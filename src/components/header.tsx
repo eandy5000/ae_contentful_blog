@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
+import { PageRoutes } from "../config/routes"
 
 interface Props {
   siteTitle: string
@@ -15,42 +16,16 @@ const Header = ({
 }: Props): JSX.Element => {
   const menuIcons = () =>
     isModalVisible ? (
-      <FaTimes
-        style={{ color: "white", fontSize: "2rem" }}
-        onClick={updateModal}
-      />
+      <FaTimes className={"header__menuIcon"} onClick={updateModal} />
     ) : (
-      <FaBars
-        style={{ color: "white", fontSize: "2rem" }}
-        onClick={updateModal}
-      />
+      <FaBars className={"header__menuIcon"} onClick={updateModal} />
     )
 
   return (
-    <header
-      style={{
-        background: `black`,
-        marginBottom: `1.45rem`,
-      }}
-    >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-        }}
-      >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
+    <header className={"header__headerWrapper"}>
+      <div className={"header__siteNameAndMenu"}>
+        <h1 className={"header__h1"}>
+          <Link to={PageRoutes.STORIES_PAGE_1} className={"header__link"}>
             {siteTitle}
           </Link>
         </h1>
