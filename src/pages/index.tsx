@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import StoriesList from "../components/indexPage/stories-list"
 import { ContentfulStoryNode } from "../models/interfaces"
 import { pageStartSlice, pageEndSlice } from "../utilities/helper"
+import { storiesConstants } from "../config/uiCopyConstants"
+import { PageRoutes } from "../config/routes"
 
 const IndexPage = ({ data }: any): JSX.Element => {
   const pageNumber = 1
@@ -27,7 +29,9 @@ const IndexPage = ({ data }: any): JSX.Element => {
     <Layout>
       <SEO title="Stories" stories={stories} />
       <StoriesList stories={stories} />
-      <Link to="/page-2/">next page</Link>
+      <Link to={PageRoutes.STORIES_PAGE_2}>
+        {storiesConstants.LINK_STORIES_2_TEXT}
+      </Link>
     </Layout>
   )
 }
