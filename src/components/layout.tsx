@@ -45,24 +45,8 @@ const Layout = ({ children }: Props): JSX.Element => {
 
         <ModalMenu isModalVisible={isModalVisible} />
       </div>
-      <footer
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          backgroundColor: "black",
-          color: "white",
-          minHeight: "30vh",
-        }}
-      >
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: "2rem 0",
-          }}
-        >
-          © {new Date().getFullYear()}
-        </div>
+      <footer className={"layout__footerWrapper"}>
+        <div className={"layout__footerText"}>© {new Date().getFullYear()}</div>
       </footer>
     </div>
   )
