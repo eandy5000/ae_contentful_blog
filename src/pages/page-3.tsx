@@ -30,7 +30,7 @@ const ThirdPage = ({ data }: any): JSX.Element => {
     <Layout>
       <SEO title="Home" stories={stories} />
       <StoriesList stories={stories} />
-      <Link style={{ marginRight: "1rem" }} to={PageRoutes.STORIES_PAGE_2}>
+      <Link className={"page__linkSpace"} to={PageRoutes.STORIES_PAGE_2}>
         {storiesConstants.LINK_STORIES_2_TEXT}
       </Link>
       <Link to={PageRoutes.STORIES_PAGE_4}>

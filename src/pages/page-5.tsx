@@ -29,7 +29,7 @@ const FifthPage = ({ data }: any): JSX.Element => {
     <Layout>
       <SEO title="Home" stories={stories} />
       <StoriesList stories={stories} />
-      <Link style={{ marginRight: "1rem" }} to={PageRoutes.STORIES_PAGE_4}>
+      <Link to={PageRoutes.STORIES_PAGE_4}>
         {storiesConstants.LINK_STORIES_4_TEXT}
       </Link>
     </Layout>

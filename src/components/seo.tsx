@@ -20,7 +20,7 @@ interface Props {
   lang: string
   meta: MetaTag[]
   title: string
-  stories: ContentfulStoryNode[]
+  stories?: ContentfulStoryNode[]
 }
 
 function SEO({ description, lang, meta, title, stories }: Props) {
