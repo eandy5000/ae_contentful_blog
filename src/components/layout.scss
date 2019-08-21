@@ -14,8 +14,8 @@
   &__footerWrapper {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: black;
-    color: white;
+    background-color: $siteDark;
+    color: $siteLight;
     min-height: 30vh;
   }
   &__footerText {

@@ -2,7 +2,7 @@ $bottomMargin: 0.6rem;
 
 .story {
   &__border {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid $siteGray;
     margin-bottom: 0.3rem;
   }
   &__name {
