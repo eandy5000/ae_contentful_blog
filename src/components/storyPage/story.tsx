@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ContentfulStoryNode } from "../../models/interfaces"
-import Pill from "../../components/shared/pill"
+import Pill from "../shared/pill"
 import { getMonth } from "date-fns"
 import { monthText } from "../../utilities/helper"
 

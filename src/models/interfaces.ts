@@ -12,6 +12,32 @@ interface PublisherNode {
   displayName: string
 }
 
+interface FeatureDescription {
+  description: string
+}
+
+interface FeatureStoryPublisher {
+  name: string
+  homeUrl: string
+  homeCountry: string
+}
+
+interface FeatureStory {
+  id: string
+  name: string
+  url: string
+  createdAt: string
+  publisher: FeatureStoryPublisher
+}
+
+export interface ContentfulFeatureNode {
+  id: string
+  createdAt: Date
+  title: string
+  description: FeatureDescription
+  stories: FeatureStory[]
+}
+
 export interface ContentfulStoryNode {
   id: string
   createdAt: Date
