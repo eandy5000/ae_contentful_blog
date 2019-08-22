@@ -1,3 +1,4 @@
+// page constants and helpers
 const storyMax = 5
 
 export const pageStartSlice = (pageNumber: number) =>
@@ -10,6 +11,14 @@ export const pageEndSlice = (pageNumber: number) => {
     default:
       return pageNumber * storyMax
   }
+}
+
+export const stringToParagraph = (str: string): string[] => {
+  const regexNewLineChar = new RegExp(/\\n/gi)
+
+  return str
+    .split("\n")
+    .map(paragraph => paragraph.replace(regexNewLineChar, ""))
 }
 
 export const monthText = (month: number): string => {

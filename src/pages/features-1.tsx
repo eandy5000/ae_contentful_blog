@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { ContentfulFeatureNode } from "../models/interfaces"
+import FeatureList from "../components/featurePage/feature-list"
 
 const FirstFeaturesPage = ({ data }: any): JSX.Element => {
   const features = data.allContentfulFeature.edges
@@ -23,7 +24,8 @@ const FirstFeaturesPage = ({ data }: any): JSX.Element => {
   return (
     <Layout>
       <SEO title="Features" />
-      features
+      <div>features</div>
+      <FeatureList features={features} />
     </Layout>
   )
 }
@@ -47,7 +49,7 @@ export const query = graphql`
             url
             createdAt
             publisher {
-              name
+              displayName
               homeUrl
               homeCountry
             }

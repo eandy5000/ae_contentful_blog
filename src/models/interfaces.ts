@@ -17,7 +17,7 @@ interface FeatureDescription {
 }
 
 interface FeatureStoryPublisher {
-  name: string
+  displayName: string
   homeUrl: string
   homeCountry: string
 }
