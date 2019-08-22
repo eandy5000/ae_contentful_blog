@@ -24,7 +24,7 @@ const FirstFeaturesPage = ({ data }: any): JSX.Element => {
   return (
     <Layout>
       <SEO title="Features" />
-      <div>features</div>
+      <div className={`featuresPage__pageTitle`}>features</div>
       <FeatureList features={features} />
     </Layout>
   )

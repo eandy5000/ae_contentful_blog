@@ -1,0 +1,5 @@
+.featuresPage {
+  &__pageTitle {
+    @include sitePageTitle;
+  }
+}

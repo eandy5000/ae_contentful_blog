@@ -28,6 +28,7 @@ const IndexPage = ({ data }: any): JSX.Element => {
   return (
     <Layout>
       <SEO title="Stories" stories={stories} />
+      <div className={`storiesPage__pageTitle`}>Stories</div>
       <StoriesList stories={stories} />
       <Link to={PageRoutes.STORIES_PAGE_2}>
         {storiesConstants.LINK_STORIES_2_TEXT}

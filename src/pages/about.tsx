@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 const AboutPage = (): JSX.Element => {
   return (
     <Layout>
-      <h1>About</h1>
+      <div className={`aboutPage__pageTitle`}>about</div>
     </Layout>
   )
 }

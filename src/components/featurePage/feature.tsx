@@ -16,10 +16,11 @@ const Feature = ({ feature }: Props) => {
     ))
   }
 
-  const featureStories = feature.stories.map(story => (
+  const featureStories = feature.stories.map((story, index) => (
     <div key={story.id} style={{ marginBottom: "0.6rem" }}>
       <div>
         <div>
+          {`${index + 1}: `}
           <a href={story.url}>{story.name}</a>
         </div>
         <div>

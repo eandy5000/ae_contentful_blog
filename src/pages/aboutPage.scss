@@ -1,0 +1,5 @@
+.aboutPage {
+  &__pageTitle {
+    @include sitePageTitle;
+  }
+}
