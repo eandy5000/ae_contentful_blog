@@ -1,3 +1,5 @@
+import { getMonth } from "date-fns"
+
 // page constants and helpers
 const storyMax = 5
 
@@ -21,7 +23,7 @@ export const stringToParagraph = (str: string): string[] => {
     .map(paragraph => paragraph.replace(regexNewLineChar, ""))
 }
 
-export const monthText = (month: number): string => {
+const monthText = (month: number): string => {
   const nonZeroMonth = month + 1
 
   switch (nonZeroMonth) {
@@ -54,3 +56,6 @@ export const monthText = (month: number): string => {
       throw new Error("Error: incorrect month number")
   }
 }
+
+export const formatDateText = (date: Date) =>
+  `${monthText(getMonth(date))}-${date.getDate()} ${date.getFullYear()}`

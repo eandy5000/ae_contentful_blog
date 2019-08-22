@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ContentfulFeatureNode } from "../../models/interfaces"
-import { stringToParagraph } from "../../utilities/helper"
+import { stringToParagraph, formatDateText } from "../../utilities/helper"
 import Pill from "../shared/pill"
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 
 const Feature = ({ feature }: Props) => {
   const description = stringToParagraph(feature.description.description)
+  const dateText = formatDateText(feature.createdAt)
 
   const descriptionParagraphs = (paragraphs: string[]) => {
     return paragraphs.map((paragraph, index: number) => (
@@ -34,10 +35,11 @@ const Feature = ({ feature }: Props) => {
   return (
     <div className={"feature__border"}>
       <div className={"feature__title"}>{feature.title}</div>
+      <div className={"feature__date"}>{dateText}</div>
       <div className={"feature__description"}>
         {descriptionParagraphs(description)}
       </div>
-      <div>Articles</div>
+      <div className={"feature__articleHeader"}>Articles</div>
       <div>{featureStories}</div>
     </div>
   )
