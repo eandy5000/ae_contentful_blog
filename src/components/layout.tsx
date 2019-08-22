@@ -29,8 +29,6 @@ const Layout = ({ children }: Props): JSX.Element => {
 
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false)
 
-  console.log("isModalVisible ", isModalVisible)
-
   const updateModal = () => setIsModalVisible(prevState => !prevState)
 
   return (

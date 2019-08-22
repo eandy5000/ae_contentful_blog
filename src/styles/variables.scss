@@ -1,3 +1,12 @@
 $siteDark: #000000;
 $siteLight: #ffffff;
 $siteGray: #808080;
+
+@mixin sitePageTitle {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid gray;
+  padding-bottom: 1rem;
+}

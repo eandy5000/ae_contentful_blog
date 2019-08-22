@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import StoriesList from "../components/indexPage/stories-list"
+import StoriesList from "../components/storyPage/stories-list"
 import { ContentfulStoryNode } from "../models/interfaces"
 import { pageStartSlice, pageEndSlice } from "../utilities/helper"
 import { storiesConstants } from "../config/uiCopyConstants"

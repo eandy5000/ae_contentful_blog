@@ -1,0 +1,8 @@
+.storiesPage {
+  &__pageTitle {
+    @include sitePageTitle;
+  }
+  &__linkSpace {
+    margin-right: 1rem;
+  }
+}

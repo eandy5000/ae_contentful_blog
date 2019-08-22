@@ -1,8 +1,7 @@
 import * as React from "react"
 import { ContentfulStoryNode } from "../../models/interfaces"
-import Pill from "../../components/shared/pill"
-import { getMonth } from "date-fns"
-import { monthText } from "../../utilities/helper"
+import Pill from "../shared/pill"
+import { formatDateText } from "../../utilities/helper"
 
 interface Props {
   story: ContentfulStoryNode
@@ -11,11 +10,7 @@ interface Props {
 const Story = ({ story }: Props) => {
   const { name, tags, hasVideo, url, createdAt, publisher } = story
   const hasVideoPill = false === hasVideo ? null : <Pill text={`has video`} />
-  const dateText = `${monthText(
-    getMonth(createdAt)
-  )}-${createdAt.getDate()} ${createdAt.getFullYear()}`
-
-  console.log("pub", publisher)
+  const dateText = formatDateText(createdAt)
 
   return (
     <div className={"story__border"}>
